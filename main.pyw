@@ -29,6 +29,9 @@ def printing():
 
         time.sleep(5)
 
+    with open('green.txt', 'a') as file:
+        file.write('Jeremiah 29:11\n')
+
     def show_notification(title, message):
         toaster = ToastNotifier()
         toaster.show_toast(title, message)
