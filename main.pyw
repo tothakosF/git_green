@@ -1,13 +1,11 @@
-#
-# I want full green github history, but unfortunately I'm lazy af ¯\_(ツ)_/¯
-#
-
 import subprocess
 from datetime import datetime
 from win10toast import ToastNotifier
 import random
 import time
 import sys
+
+DETACHED_PROCESS = 0x00000008
 
 
 def printing():
@@ -25,10 +23,13 @@ def printing():
 
         formatted_date = datetime.now().strftime("%Y-%m-%d %H:%M:%S")
 
-        subprocess.run(["git", "add", "."])
+        subprocess.run(["git", "add", "."], creationflags=DETACHED_PROCESS,
+                       startupinfo=subprocess.STARTUPINFO())
         subprocess.run(
-            ["git", "commit", "-m", f"An other one {formatted_date} 👆"])
-        subprocess.run(["git", "push", "-u", "origin", "master"])
+            ["git", "commit", "-m", f"An other one {formatted_date} 👆"], creationflags=DETACHED_PROCESS,
+            startupinfo=subprocess.STARTUPINFO())
+        subprocess.run(["git", "push", "-u", "origin", "master"], creationflags=DETACHED_PROCESS,
+                       startupinfo=subprocess.STARTUPINFO())
 
         time.sleep(5)
 
