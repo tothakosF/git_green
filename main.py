@@ -45,4 +45,3 @@ def printing():
 
 if __name__ == "__main__":
     printing()
-    sys.stdout = sys.stderr
