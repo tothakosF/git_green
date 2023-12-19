@@ -20,6 +20,9 @@ def printing():
     random_times = random.randint(1, 5)
 
     for _ in range(random_times):
+        with open('green.txt', 'a') as file:
+            file.write('Jeremiah 29:11\n')
+
         formatted_date = datetime.now().strftime("%Y-%m-%d %H:%M:%S")
 
         subprocess.run(["git", "add", "."])
