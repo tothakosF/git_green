@@ -21,6 +21,8 @@ def printing():
         with open('green.txt', 'a') as file:
             file.write('Jeremiah 29:11\n')
 
+        time.sleep(1)
+
         formatted_date = datetime.now().strftime("%Y-%m-%d %H:%M:%S")
 
         subprocess.run(["git", "add", "."], creationflags=DETACHED_PROCESS,
@@ -30,8 +32,6 @@ def printing():
             startupinfo=subprocess.STARTUPINFO())
         subprocess.run(["git", "push", "-u", "origin", "master"], creationflags=DETACHED_PROCESS,
                        startupinfo=subprocess.STARTUPINFO())
-
-        time.sleep(5)
 
     with open('green.txt', 'a') as file:
         file.write('Jeremiah 29:11\n')
