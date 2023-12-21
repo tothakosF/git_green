@@ -45,7 +45,7 @@ if __name__ == "__main__":
         subprocess.run(
             ["git", "commit", "-m", f"An other one {formatted_date} 👆"], creationflags=DETACHED_PROCESS,
             startupinfo=subprocess.STARTUPINFO())
-        subprocess.run(["git", "push", "-u", "origin", "master"], creationflags=DETACHED_PROCESS,
+        subprocess.run(["git", "push"], creationflags=DETACHED_PROCESS,
                        startupinfo=subprocess.STARTUPINFO())
 
         time.sleep(rnd)
